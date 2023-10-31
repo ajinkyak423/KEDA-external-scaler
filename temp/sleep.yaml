@@ -1,0 +1,51 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: sleep-pod
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: sleep-pod
+  template:
+    metadata:
+      labels:
+        app: sleep-pod
+    spec:
+      containers:
+      - name: sleep-container
+        image: python:3.8 
+        command: ["sleep", "5000"] 
+
+      #   env:
+      #   - name: SMTP_SERVER
+      #     valueFrom:
+      #       secretKeyRef:
+      #         name: email-secret
+      #         key: SMTP_SERVER
+      #   - name: SENDER_EMAIL
+      #     valueFrom:
+      #       secretKeyRef:
+      #         name: email-secret
+      #         key: SENDER_EMAIL
+      #   - name: DESTINATION_EMAIL
+      #     valueFrom:
+      #       secretKeyRef:
+      #         name: email-secret
+      #         key: DESTINATION_EMAIL
+      #   - name: SMTP_USERNAME
+      #     valueFrom:
+      #       secretKeyRef:
+      #         name: email-secret
+      #         key: SMTP_USERNAME
+      #   - name: SMTP_PASSWORD
+      #     valueFrom:
+      #       secretKeyRef:
+      #         name: email-secret
+      #         key: SMTP_PASSWORD
+      # restartPolicy: Always
+
+      #   envFrom:
+      #   - secretRef:
+      #       name: email-secret
+      # restartPolicy: Always
