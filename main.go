@@ -181,7 +181,7 @@ func (e *ExternalScaler) GetMetrics(_ context.Context, metricRequest *pb.GetMetr
 	return &pb.GetMetricsResponse{
 		MetricValues: []*pb.MetricValue{{
 			MetricName:  "earthquakeThreshold",
-			MetricValue: float32(serviceDataInt),
+			MetricValue: int64(serviceDataInt),
 		}},
 	}, nil
 }

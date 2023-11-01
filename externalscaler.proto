@@ -26,7 +26,7 @@ message GetMetricSpecResponse {
 
 message MetricSpec {
     string metricName = 1;
-    float targetSize = 2;
+    int64 targetSize = 2;
 }
 
 message GetMetricsRequest {
@@ -40,5 +40,5 @@ message GetMetricsResponse {
 
 message MetricValue {
     string metricName = 1;
-    float metricValue = 2;
+    int64 metricValue = 2;
 }
